@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap");
+header {
+  background-color: lightgray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  padding: 10px;
+}
+
+header h1 {
+  font-size: 30px;
+}
+
+header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style-type: none;
+  margin-right: 30px;
+}
+
+header ul li {
+  margin-left: 10px;
+}
+
+header ul li a {
+  text-decoration: none;
+}
+
+main {
+  height: 94vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas: ". . . . ." ". box1 box2 box3 ." ". box1 box2 box3 ." ". . . . .";
+  grid-column-gap: 30px;
+}
+
+main .app-box {
+  border-radius: 20px;
+  border: 20px white;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  -webkit-box-shadow: 6px 6px 15px -3px rgba(0, 0, 0, 0.45);
+  box-shadow: 6px 6px 15px -3px rgba(0, 0, 0, 0.45);
+}
+
+main .app-box1 {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: box1;
+  background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
+}
+
+main .app-box2 {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 3;
+  grid-area: box2;
+  background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
+}
+
+main .app-box3 {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 4;
+  grid-area: box3;
+  background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*# sourceMappingURL=index.css.map */

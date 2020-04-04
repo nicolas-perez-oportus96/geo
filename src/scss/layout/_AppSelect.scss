@@ -1,0 +1,43 @@
+main{
+    height: 94vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows:1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        ". . . . ."
+        ". box1 box2 box3 ."
+        ". box1 box2 box3 ."
+        ". . . . .";
+    grid-column-gap: 30px;
+
+    .app-box{
+        border-radius: 20px;
+        border: 20px white;
+        color: white;
+        text-align: center;
+        padding: 20px ;
+        -webkit-box-shadow: 6px 6px 15px -3px rgba(0,0,0,0.45);
+        -moz-box-shadow: 6px 6px 15px -3px rgba(0,0,0,0.45);
+        box-shadow: 6px 6px 15px -3px rgba(0,0,0,0.45);
+    }
+    
+    
+    
+    .app-box1{
+        grid-area: box1;
+        background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
+    }
+    
+    .app-box2{
+        grid-area: box2;
+        background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
+    }
+    
+    .app-box3{
+        grid-area: box3;
+        background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
+    }
+
+    
+}
+
