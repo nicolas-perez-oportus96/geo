@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
-import arrow from '../assets/Arrow.svg'
 
 export default class AppSelect extends Component {
     render() {
@@ -8,31 +8,34 @@ export default class AppSelect extends Component {
             <main className="app-grid">
                 <div className="app-box app-box1">
                     <div className="titulo">
+                        <img src="/assets/App.svg" alt="app-icon"/>
                         <h1>Aplicacion 1</h1>
-                    <hr/>
                     </div>
+                    <hr/>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente voluptatibus enim ab. Optio fugiat ea, unde voluptatibus rem officia numquam neque maxime, tempora, porro ducimus molestiae quas eveniet culpa quos.</p>
-                    <button>Visitar Aplicacion  <img src={arrow} alt="arrow"></img> </button>
+                    <Link className="button" to="/app1">Visitar Aplicacion  <img src="/assets/Arrow.svg" alt="arrow"></img> </Link>
                 </div>
                 
                 <svg></svg>
 
                 <div className="app-box app-box2">
                     <div className="titulo">
-                        <h1>Aplicacion 1</h1>
-                        <hr/>
+                        <img src="/assets/App.svg" alt="app-icon"/>
+                        <h1>Aplicacion 2</h1>
                     </div>
+                    <hr/>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente voluptatibus enim ab. Optio fugiat ea, unde voluptatibus rem officia numquam neque maxime, tempora, porro ducimus molestiae quas eveniet culpa quos.</p>
-                    <button>Visitar Aplicacion <img src={arrow} alt="arrow"></img> </button>
+                    <Link className="button" to="/app2">Visitar Aplicacion <img src="/assets/Arrow.svg" alt="arrow"></img> </Link>
                 </div> 
 
                 <div className="app-box app-box3">
                     <div className="titulo">
-                        <h1>Aplicacion 1</h1>
-                        <hr/>
+                        <img src="/assets/App.svg" alt="app-icon"/>
+                        <h1>Aplicacion 3</h1>
                     </div>
+                    <hr/>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente voluptatibus enim ab. Optio fugiat ea, unde voluptatibus rem officia numquam neque maxime, tempora, porro ducimus molestiae quas eveniet culpa quos.</p>
-                    <button>Visitar Aplicacion <img src={arrow} alt="arrow"></img> </button>
+                    <Link className="button" to="/app3">Visitar Aplicacion <img src="/assets/Arrow.svg" alt="arrow"></img> </Link>
                 </div>
             </main>
         )

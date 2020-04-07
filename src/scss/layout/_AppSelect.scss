@@ -1,4 +1,4 @@
-main{
+.app-grid{
     height: 94vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -9,15 +9,14 @@ main{
         ". box1 box2 box3 ."
         ". . . . .";
     grid-column-gap: 30px;
-    background-image: url('/backgrounda.jpg');
+    background-image: url('/assets/backgrounda.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     
 
     .app-box{
-        border-radius: 20px;
-        color: white;
+        border-radius: 10px;
         padding: 20px ;
         -webkit-box-shadow: 6px 6px 15px -3px rgba(0,0,0,0.45);
         -moz-box-shadow: 6px 6px 15px -3px rgba(0,0,0,0.45);
@@ -26,32 +25,47 @@ main{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        background: #C9CCD3;
+        background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
+        background-blend-mode: lighten;
+        
+        .titulo {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            img {
+                width: 50px;
+                height: 50px;
+                margin-right: 20px;
+            }
 
-        h1 {
-            font-family: 'Noto Sans', sans-serif;
-            font-size: 25px;
-            margin-bottom: 5px;
+            h1 {
+                font-family: 'Noto Sans', sans-serif;
+                font-size: 25px;
+            }
         }
+
         p{
             font-family: 'Noto Sans', sans-serif;
         }
-        hr {
-            color: white;
-        }
 
-        button {
-            font-size: 15px;
+        .button {
+            font-size: 18px;
             font-weight: 500;
             font-family:'Montserrat', sans-serif;
+            color: black;
             border: none;
             padding: 10px;
             border-radius: 20px;
             background-image: radial-gradient( circle 827px at 47.3% 48%,  rgba(255,255,255,1) 0%, rgba(138,192,216,1) 90% );
             cursor: pointer;
             transition-property: all;
-            transition-duration: .6s;
+            transition-duration: .4s;
+            text-decoration: none;
 
-            justify-content: space-between;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
 
             img {
                 width: 20px;
@@ -60,36 +74,25 @@ main{
             }
 
             &:hover {
-                background: #87cccf;  /* fallback for old browsers */
+                background: #486b6d;  /* fallback for old browsers */
                 -webkit-box-shadow: 6px 6px 15px -3px rgba(0,0,0,0.45);
                 -moz-box-shadow: 6px 6px 15px -3px rgba(0,0,0,0.45);
                 box-shadow: 6px 6px 15px -3px rgba(0,0,0,0.45);
-                
+                color: white;
             }
-
-            
         }
-
-
     }
-    
-    
     
     .app-box1{
         grid-area: box1;
-        background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
     }
     
     .app-box2{
         grid-area: box2;
-        background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
     }
     
     .app-box3{
         grid-area: box3;
-        background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
     }
-
-    
 }
 

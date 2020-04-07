@@ -8,6 +8,10 @@ header {
 
     h1{
         font-size: 30px;
+
+        span{
+            font-weight: 300;
+        }
     }
 
     ul {
@@ -15,12 +19,14 @@ header {
         justify-content: space-between;
         list-style-type: none;
         margin-right: 30px;
-
         li{
             margin-left:20px;
-        
             a{
+                color: rgb(66, 65, 65);
                 text-decoration: none;
+                &:hover{
+                    color: black;
+                }
             }
         }
     }
