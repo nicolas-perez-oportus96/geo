@@ -1,0 +1,59 @@
+.app-container{
+    height: 94vh;
+    display: grid;
+    grid-template-columns:  repeat(3, 1fr) 20rem;
+    grid-template-rows: 6rem repeat(2, 1fr);
+    grid-template-areas: 
+        "box1 box1 box1 box1"
+        "box3 box3 box3 box2"
+        "box3 box3 box3 box2";
+    font-family: 'Noto Sans', sans-serif;
+
+    h1{
+        font-size: 20px;
+        padding-bottom: 5px;
+    }
+    
+    span{
+        font-weight: 400;
+    }
+
+    p{
+        font-size: 15px;
+        padding-bottom: 8px;
+    }
+    img{
+        width: 70px;
+        height: 70px;
+        margin-right: 30px;
+    }
+
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.container {
+    margin: 0 auto;
+    width: 80%;
+    height: 100%;
+    
+}
+.instrucciones {
+    grid-area: box1;
+    background-color: rgb(79, 79, 143);
+    color: white;
+}
+
+.sidebar {
+    grid-area: box2;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    
+}
+
+.map {
+    grid-area: box3;
+    border-right: solid 1px;
+}

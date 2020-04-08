@@ -15,7 +15,7 @@ function App() {
       <Router>
       
         <Header/>
-        <Redirect from="/" to="/home"/>
+        {/* <Redirect from="/" to="/home"/> */}
         <Switch> 
           <Route path="/home" component={AppSelect} />
           <Route path="/app1" component={App1}/>
