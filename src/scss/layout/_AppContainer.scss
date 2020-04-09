@@ -2,7 +2,7 @@
     height: 94vh;
     display: grid;
     grid-template-columns:  repeat(3, 1fr) 20rem;
-    grid-template-rows: 6rem repeat(2, 1fr);
+    grid-template-rows: 4.5rem repeat(2, 1fr);
     grid-template-areas: 
         "box1 box1 box1 box1"
         "box3 box3 box3 box2"
@@ -30,8 +30,32 @@
 
     .flex {
         display: flex;
-        justify-content: space-between;
         align-items: center;
+    }
+
+    .instrucciones {
+        grid-area: box1;
+        background-color: rgb(79, 79, 143);
+        color: white;
+    }
+
+
+    .sidebar {
+        grid-area: box2;
+        display: grid;
+        grid-template-rows: repeat(5, 1fr);
+        h2 {
+            font-size: 18px;
+            font-weight: 300;
+            padding: 15px 0 0 20px;
+            color: rgb(83, 83, 83);
+        }
+        
+    }
+    
+    .map {
+        grid-area: box3;
+        border-right: solid rgb(185, 183, 183) 1px;
     }
 }
 .container {
@@ -40,20 +64,5 @@
     height: 100%;
     
 }
-.instrucciones {
-    grid-area: box1;
-    background-color: rgb(79, 79, 143);
-    color: white;
-}
 
-.sidebar {
-    grid-area: box2;
-    display: grid;
-    grid-template-rows: repeat(5, 1fr);
-    
-}
 
-.map {
-    grid-area: box3;
-    border-right: solid 1px;
-}

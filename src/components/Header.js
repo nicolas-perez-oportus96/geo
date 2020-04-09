@@ -5,7 +5,11 @@ export default class Header extends Component {
     render() {
         return (
             <header className="header">
-                <h1>GeoProcessing <span>Apps</span></h1>
+                <div className="titulo">
+                    <img src="/assets/Mountain.svg" alt="mountain-icon"/>
+                    <h1>GeoProcessing <span>Apps</span></h1>
+                </div>
+                
                 <nav>
                     <ul>
                         <li><Link to="#">Inicio</Link></li>

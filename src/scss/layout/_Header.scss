@@ -13,6 +13,16 @@ header {
             font-weight: 300;
         }
     }
+    .titulo {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        img {
+            width: 37px;
+            height: 37px;
+            margin-right: 10px;
+        }
+    }
 
     ul {
         display: flex;
