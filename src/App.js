@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 import Header from './components/Header'
 import AppSelect from './components/AppSelect'
@@ -15,7 +15,7 @@ function App() {
       <Router>
       
         <Header/>
-        <Redirect from='/' to="/home"/>
+        {/* <Redirect from='/' to="/home"/> */}
         <Switch> 
           <Route path="/home" component={AppSelect} />
           <Route path="/app1" component={App1}/>
