@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Map, TileLayer,LayersControl, LayerGroup} from 'react-leaflet';
 import { BingLayer } from 'react-leaflet-bing-v2'
-
+import { CRS } from 'leaflet'
 const bing_key = "ArSPuxaxB8bp-VtsbY3jIUaocR9WLqKRM5X1rhjQLHHwolRjr5oAoUZ436gUVrvM"
 
 export default class App1 extends Component {
@@ -20,12 +20,10 @@ export default class App1 extends Component {
 
                 <div className="sidebar">
                     <h2>Informacion del poligono</h2>
-
                 </div>
 
                 <div className="map">
-                    <Map center={[-34.238347, -70.250921]} zoom={7} minZoom={7} maxZoom={13} maxBounds={[[-35.494268, -70.735148], [-32.963408, -69.766694]]} >
-
+                    <Map center={[-34.238347, -70.250921]} zoom={8} minZoom={6} maxZoom={12} maxBounds={[[-35.494268, -70.735148], [-32.963408, -69.766694]]} crs={CRS.EPSG3857} >
                         {/* Control de Capas */}
                         <LayersControl position="topright">
                         {/* GRUPO DE CAPAS WORLD IMAGERY+ SHADERELIEF */}
@@ -56,9 +54,13 @@ export default class App1 extends Component {
                             <LayersControl.BaseLayer name="BING Maps Satellital">
                                 <BingLayer  bingkey={bing_key} />
                             </LayersControl.BaseLayer>
+
+                            <LayersControl.Overlay name="BASE">
+                                <TileLayer url="http://192.168.0.31:8080/app1/{z}/{x}/{y}.png"  tms={false}  />
+                
+                            </LayersControl.Overlay>
+
                         </LayersControl>
-                    
-                        
                     </Map>
                 </div>
             </main>
