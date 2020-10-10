@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Map, TileLayer } from 'react-leaflet';
+import MapComponent from './MapComponent';
 
 export default class App1 extends Component {
   
@@ -23,12 +23,7 @@ export default class App1 extends Component {
                 </div>
 
                 <div className="map">
-                    <Map center={[-35.675148, -71.542969]} zoom={6}>
-                        <TileLayer
-                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> Contributors'
-                        />
-                    </Map>
+                    <MapComponent/>
                 </div>
             </main>
         )
