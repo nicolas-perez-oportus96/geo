@@ -19,10 +19,10 @@ export default class AppSelect extends Component {
                 <div className="app-box app-box1">
                     <div className="titulo">
                         <img src="/assets/App.svg" alt="app-icon"/>
-                        <h2>Aplicacion 1</h2>
+                        <h2>Inventario Nacional de Glaciares</h2>
                     </div>
                     <hr/>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente voluptatibus enim ab. Optio fugiat ea, unde voluptatibus rem officia numquam neque maxime, tempora, porro ducimus molestiae quas eveniet culpa quos.</p>
+                    <p>Disposici&oacute;n din&aacute;mica de la informaci&oacute;n del inventario nacional de glaciares vigente (a&ntilde;o 2015).</p>
                     <Link className="button" to="/app1">Visitar Aplicacion  <img src="/assets/Arrow.svg" alt="arrow"></img> </Link>
                 </div>
                 

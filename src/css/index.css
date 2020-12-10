@@ -305,6 +305,21 @@ header ul li a:hover {
   height: 100%;
 }
 
+.sidebar .titulo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 20px;
+}
+
+.sidebar .titulo h1 {
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
