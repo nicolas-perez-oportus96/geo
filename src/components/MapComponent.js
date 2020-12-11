@@ -9,7 +9,6 @@ const bing_key = "ArSPuxaxB8bp-VtsbY3jIUaocR9WLqKRM5X1rhjQLHHwolRjr5oAoUZ436gUVr
 
 export default function MapComponent({ data }) {
     const [feature, setFeature] = useContext(FeatureContext);
-
     function getFeatureData(featureData) {
         setFeature(featureData);
         console.log(feature)
@@ -39,7 +38,7 @@ export default function MapComponent({ data }) {
                 <LayersControl.BaseLayer name="ESRI Shaded Relief">
                     <TileLayer
                         attribution='Tiles &copy; Esri &mdash; Source: Esri'
-                        url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}"
+                        url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}" 
                     />
                 </LayersControl.BaseLayer>
 
@@ -56,7 +55,7 @@ export default function MapComponent({ data }) {
                     <WMSTileLayer url="http://34.67.131.141:8080/geoserver/app1/wms" layers={'app1:ING_FINAL'} tms={false} crs={CRS.EPSG4326} format={'image/png'} transparent={true} />
                 </LayersControl.Overlay>
 
-                <LayersControl.Overlay checked name="Capa de Glaciares GEOJSON">
+                <LayersControl.Overlay name="Capa de Glaciares GEOJSON">
                     <MapLayer data={data} getFeatureData={getFeatureData} />
                 </LayersControl.Overlay>
 

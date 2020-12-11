@@ -4,23 +4,22 @@ const axios = require('axios');
 
 export default function App1f(props) {
 
-    const [Data, SetData] = useState({})
+    const [data, setData] = useState({});
 
-    async function GetWFSData() {
-        await axios.get('http://34.67.131.141:8080/geoserver/app1/wfs?request=GetFeature&version=1.0.0&typeName=app1:ING_FINAL&outputFormat=json')
-        .then(function (response) {
-            SetData(response.data)
-       })
-       .catch(function (error) {
-         console.log(error);
-       })
-    };
+    // useEffect(() => {
+    //     GetWFSData();
+    // })
+    
+    // const GetWFSData = async () => {
+    //     const res = await axios.get('http://34.67.131.141:8080/geoserver/app1/wfs?request=GetFeature&version=1.0.0&typeName=app1:ING_FINAL&outputFormat=json')
+    //     await console.log(res.data)
+    // };
+    
 
     // async function GetWFSData() {
     //     const res = await axios.get('http://34.67.131.141:8080/geoserver/app1/wfs?request=GetFeature&version=1.0.0&typeName=app1:ING_FINAL&outputFormat=json')
-    //     await SetData(res.data)
-    //     await setReady(true)
-    //     console.log(Data)
+    //     await setData(res.data)
+    //     console.log(data)
     // };
 
     
@@ -38,7 +37,6 @@ export default function App1f(props) {
 
             <div className="sidebar">
                 <h2>Informacion del poligono</h2>
-                <button onClick={() => console.log(Data)}></button>
             </div>
 
             <div className="map">
