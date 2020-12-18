@@ -1,7 +1,7 @@
 import React, { Component, } from 'react'
 import MapComponent from './MapComponent';
 import Sidebar from './Sidebar'
-const axios = require('axios');
+// const axios = require('axios');
 
 
 export default class App1 extends Component {

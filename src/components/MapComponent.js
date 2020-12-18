@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { Map, TileLayer, LayersControl, LayerGroup, WMSTileLayer, withLeaflet} from 'react-leaflet';
 import { BingLayer } from 'react-leaflet-bing-v2';
-import L, { CRS, tileLayer } from 'leaflet';
-import MapLayer from './MapLayer';
+import L, { CRS } from 'leaflet';
+// import MapLayer from './MapLayer';
 import { FeatureContext } from './FeatureContext';
 import VectorGridDefault from "react-leaflet-vectorgrid";
 const bing_key = "ArSPuxaxB8bp-VtsbY3jIUaocR9WLqKRM5X1rhjQLHHwolRjr5oAoUZ436gUVrvM";
@@ -13,7 +13,6 @@ export default function MapComponent({ data }) {
 
     function getFeatureData(featureData) {
         setFeature(featureData);
-        console.log(feature)
     }
 
     const vectorStyles = {
@@ -88,7 +87,7 @@ export default function MapComponent({ data }) {
                     <MapLayer data={data} getFeatureData={getFeatureData} />
                 </LayersControl.Overlay> */}
 
-                <VectorGrid {...options}  onClick={ (e) => (getFeatureData(e.layer.properties))  } />
+                <VectorGrid {...options}  onClick={ (e) => {getFeatureData(e.layer.properties);}  } />
                 
             </LayersControl>
         </Map>
