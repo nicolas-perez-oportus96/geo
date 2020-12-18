@@ -10,12 +10,12 @@ export default class App1 extends Component {
         isReady: Boolean,
     };
 
-    async componentDidMount(){
-        const res = await axios.get('http://35.184.122.36:8080/geoserver/app1/wfs?service=wfs&request=GetFeature&version=1.0.0&typeName=app1:ING_FINAL&SRSName=EPSG:4326&outputFormat=json');
-        await this.setState({
-            mapdata: res.data
-        })
-    }
+    // async componentDidMount(){
+    //     const res = await axios.get('http://35.223.6.88:8080/geoserver/app1/wfs?service=wfs&request=GetFeature&version=1.0.0&typeName=app1:ING_FINAL&SRSName=EPSG:4326&outputFormat=json');
+    //     await this.setState({
+    //         mapdata: res.data
+    //     })
+    // }
     
     render() {
         return (

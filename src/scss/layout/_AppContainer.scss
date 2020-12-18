@@ -50,12 +50,22 @@
             padding: 15px 0 0 20px;
             color: rgb(83, 83, 83);
         }
+
+        ul{
+            list-style-type: none;
+            font-size: 13px;
+            font-weight: bold;
+        }
         
     }
     
     .map {
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 0;
         grid-area: box3;
         border-right: solid rgb(185, 183, 183) 1px;
+
     }
 }
 .container {

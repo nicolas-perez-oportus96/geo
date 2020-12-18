@@ -290,7 +290,17 @@ header ul li a:hover {
   color: #535353;
 }
 
+.app-container .sidebar ul {
+  list-style-type: none;
+  font-size: 13px;
+  font-weight: bold;
+}
+
 .app-container .map {
+  position: -webkit-sticky;
+  /* Safari */
+  position: sticky;
+  top: 0;
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
   -ms-grid-column: 1;
