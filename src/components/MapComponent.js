@@ -1,5 +1,6 @@
+//imports
 import React, { useContext } from 'react';
-import { Map, TileLayer, LayersControl, LayerGroup, WMSTileLayer, withLeaflet} from 'react-leaflet';
+import { Map, TileLayer, LayersControl, LayerGroup, withLeaflet} from 'react-leaflet';
 import { BingLayer } from 'react-leaflet-bing-v2';
 import L, { CRS } from 'leaflet';
 // import MapLayer from './MapLayer';
@@ -7,43 +8,83 @@ import { FeatureContext } from './FeatureContext';
 import VectorGridDefault from "react-leaflet-vectorgrid";
 const bing_key = "ArSPuxaxB8bp-VtsbY3jIUaocR9WLqKRM5X1rhjQLHHwolRjr5oAoUZ436gUVrvM";
 
-
+//FUNCTIONAL COMPONENT
 export default function MapComponent({ data }) {
     const [feature, setFeature] = useContext(FeatureContext);
 
+    //funcion para añadir datos del poligono seleccionado al context.
     function getFeatureData(featureData) {
         setFeature(featureData);
     }
 
+    //estilos para los vectores  
     const vectorStyles = {
-        ING_FINAL: {
-          fill: true,
-          weight: 1,
-          fillColor: "#ff00ff",
-          color: "#ff00ff",
-          fillOpacity: 0.9,
-          opacity: 0.9,
-          maxNativeZoom: 14,
-          minNativeZoom: 1
+        ING_Montaña: {
+            minZoom: 12, 
+            stroke: true,
+            color: 'black',
+            weight: 1.3,
+            opacity: 0.5,
+            linejoin: 'round',
+            dashArray: '2, 3',
+            fill: true, 
+            fillColor: '#39d2ff',
+            fillOpacity: 0.5,
+        },
+        ING_Valle: {
+            stroke: true,
+            color: 'black',
+            weight: 1.3,
+            opacity: 0.5,
+            linejoin: 'round',
+            dashArray: '2, 3',
+            fill: true, 
+            fillColor: '#39ecbc',
+            fillOpacity: 0.5,
+        },
+        ING_Rocoso: {
+            stroke: true,
+            color: 'black',
+            weight: 1.3,
+            opacity: 0.5,
+            linejoin: 'round',
+            dashArray: '2, 3',
+            fill: true, 
+            fillColor: '#ffd501',
+            fillOpacity: 0.5,
+        },
+        ING_Glaciarete: {
+            stroke: true,
+            color: 'black',
+            weight: 1.3,
+            opacity: 0.5,
+            linejoin: 'round',
+            dashArray: '2, 3',
+            fill: true, 
+            fillColor: '#ac11ff',
+            fillOpacity: 0.5,
         }
-      };
-      const VectorGrid = withLeaflet(VectorGridDefault);
-      const options = {
+    };
+     //opciones VectorGrid
+     const options = {
         tolerance: 30, // 5 simplification tolerance (higher means simpler)
         extent: 4096, //4096, // 4096 tile extent (both width and height)
         buffer: 128, // 64 default 64tile buffer on each side
         rendererFactory: L.svg.tile ,
         type: "protobuf",
-        url: "http://35.184.122.36/ING_VT/{z}/{x}/{y}.pbf",
+        url: "http://35.232.21.212/teselas/ING_VT/{z}/{x}/{y}.pbf",
         vectorTileLayerStyles: vectorStyles,
         subdomains: "abcd",
         key: "abcdefghi01234567890",
         interactive: true,
-        zIndex: 401
-      };
+        zIndex: 401 
+    };
 
+    const VectorGrid = withLeaflet(VectorGridDefault);
+   
+    //JSX
     return (
-        <Map center={[-34.238347, -70.250921]} zoom={8} minZoom={6} maxZoom={12} maxBounds={[[-35.494268, -70.735148], [-32.963408, -69.766694]]} crs={CRS.EPSG3857} >
+        <Map center={[-34.238347, -70.250921]} zoom={8} minZoom={8} maxZoom={12} maxBounds={[[-35.494268, -70.735148], [-32.963408, -69.766694]]} crs={CRS.EPSG3857} >
             {/* Control de Capas */}
             <LayersControl position="topright">
                 {/* GRUPO DE CAPAS WORLD IMAGERY+ SHADERELIEF */}
@@ -75,17 +116,13 @@ export default function MapComponent({ data }) {
                     <BingLayer bingkey={bing_key} />
                 </LayersControl.BaseLayer>
 
-                <LayersControl.Overlay name="Area de Estudio">
-                    <TileLayer active url="http://35.184.122.36/Tiles3/{z}/{x}/{y}.png" tms={false} />
+                <LayersControl.Overlay checked name="Area de Estudio">
+                    <TileLayer url="http://35.232.21.212/teselas/CBase/{z}/{x}/{y}.png" tms={false} />
                 </LayersControl.Overlay>
 
-                <LayersControl.Overlay name="Capa de Glaciares">
-                    <WMSTileLayer url="http://34.67.131.141:8080/geoserver/app1/wms" layers={'app1:ING_FINAL'} tms={false} crs={CRS.EPSG4326} format={'image/png'} transparent={true} />
+                <LayersControl.Overlay name="Etiquetas">
+                    <TileLayer url="http://35.232.21.212/teselas/Label/{z}/{x}/{y}.png" tms={false} />
                 </LayersControl.Overlay>
-
-                {/* <LayersControl.Overlay name="Capa de Glaciares GEOJSON">
-                    <MapLayer data={data} getFeatureData={getFeatureData} />
-                </LayersControl.Overlay> */}
 
                 <VectorGrid {...options}  onClick={ (e) => {getFeatureData(e.layer.properties);}  } />
                 

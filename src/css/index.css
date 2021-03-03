@@ -270,6 +270,7 @@ header ul li a:hover {
   grid-area: box1;
   background-color: #4f4f8f;
   color: white;
+  overflow: hidden;
 }
 
 .app-container .sidebar {
@@ -307,12 +308,17 @@ header ul li a:hover {
   -ms-grid-column-span: 3;
   grid-area: box3;
   border-right: solid #b9b7b7 1px;
+  overflow: hidden;
 }
 
 .container {
   margin: 0 auto;
   width: 80%;
   height: 100%;
+}
+
+.sidebar {
+  overflow: auto;
 }
 
 .sidebar .titulo {
@@ -328,6 +334,48 @@ header ul li a:hover {
 .sidebar .titulo h1 {
   font-weight: 300;
   letter-spacing: 1px;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar .reporte {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 15px;
+}
+
+.sidebar .reporte .btn-reporte {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  border-color: #4F4F8F;
+  border-radius: 5px;
+  color: #4F4F8F;
+  background-color: white;
+}
+
+.sidebar .reporte .btn-reporte i {
+  font-size: 40px;
+  margin-right: 10px;
+}
+
+.sidebar .reporte .btn-reporte:hover {
+  color: white;
+  background-color: #4F4F8F;
+  border-color: white;
+}
+
+.sidebar .guia {
+  padding: 10px;
+  text-align: center;
 }
 
 * {

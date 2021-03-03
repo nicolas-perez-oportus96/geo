@@ -17,11 +17,15 @@ export default function Sidebar() {
                 <div className="titulo">
                     <h1>Información glaceológica</h1>
                 </div>
+
+                <div className="reporte">
+                    <button className="btn-reporte"><i class="far fa-file-pdf"></i>Descargar Reporte</button>
+                </div>
     
-                <Accordion allowZeroExpanded={true}>
+                <Accordion allowZeroExpanded={true} preExpanded={['info']}>
     
                     {/* IDENTIFICACIÓN DEL GLACIAR */}
-                    <AccordionItem>
+                    <AccordionItem uuid="info" >
                         <AccordionItemHeading>
                             <AccordionItemButton>
                                 IDENTIFICACIÓN DEL GLACIAR
