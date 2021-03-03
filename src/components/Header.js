@@ -1,23 +1,27 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 export default class Header extends Component {
     render() {
         return (
             <header className="header">
+
+                <div className="logo-udec">
+                    <img src="/assets/udec.png" alt=""/>
+                </div>
                 <div className="titulo">
-                    <img src="/assets/Mountain.svg" alt="mountain-icon"/>
-                    <h1>GeoProcessing <span>Apps</span></h1>
+                    <h1>Plataforma de información glaciológica de Chile central</h1>
+                    <p>Mountain GeoScience Group - Universidad de Concepción</p>
+                </div>
+
+                <div className="logo-udec">
+                    <img src="/assets/mgsg.png" alt=""/>
                 </div>
                 
-                <nav>
-                    <ul>
-                        <li><Link to="/home">Inicio</Link></li>
-                        <li><Link to="#">Acerca de</Link></li>
-                        <li><Link to="#">Encuesta</Link></li>
-                    </ul>
-                </nav>
             </header>
+
+
+
         )
     }
 }

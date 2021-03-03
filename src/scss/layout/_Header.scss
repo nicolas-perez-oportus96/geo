@@ -1,28 +1,28 @@
 header {
-    background-color:lightgray;
+    background: url('/assets/navbar.png') top center no-repeat ;
+    background-size: cover;
     display:flex;
-    justify-content:space-between;
+    justify-content:space-evenly;
     align-items:center;
-    font-family:'Montserrat', sans-serif;
     padding:10px;
 
-    h1{
-        font-size: 30px;
+    .titulo{
+        font-family:'Montserrat', sans-serif;
+        font-size: 15px;
+        color: white;
+        p{
+            text-align: center;
+            padding-top: 20px;
+            font-size: 20px
+        }
+    }
 
-        span{
-            font-weight: 300;
+    .logo-udec{
+        img{
+            height: 125px;
         }
     }
-    .titulo {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        img {
-            width: 37px;
-            height: 37px;
-            margin-right: 10px;
-        }
-    }
+    
 
     ul {
         display: flex;

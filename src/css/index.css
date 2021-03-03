@@ -2,44 +2,34 @@
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap");
 @import url("https://unpkg.com/leaflet@1.6.0/dist/leaflet.css");
 header {
-  background-color: lightgray;
+  background: url("/assets/navbar.png") top center no-repeat;
+  background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: 'Montserrat', sans-serif;
   padding: 10px;
 }
 
-header h1 {
-  font-size: 30px;
-}
-
-header h1 span {
-  font-weight: 300;
-}
-
 header .titulo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  color: white;
 }
 
-header .titulo img {
-  width: 37px;
-  height: 37px;
-  margin-right: 10px;
+header .titulo p {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+header .logo-udec img {
+  height: 125px;
 }
 
 header ul {
@@ -72,33 +62,16 @@ header ul li a:hover {
   display: grid;
   -ms-grid-columns: (1fr)[5];
       grid-template-columns: repeat(5, 1fr);
-  -ms-grid-rows: 50px 110px (130px)[2];
-      grid-template-rows: 50px 110px repeat(2, 130px);
-      grid-template-areas: ". . . . ." ". i i i ." ". box1 box2 box3 ." ". box1 box2 box3 .";
+  -ms-grid-rows: 50px 110px (70px)[2];
+      grid-template-rows: 50px 110px repeat(2, 70px);
+      grid-template-areas: ". . . . ." ". . . . ." ". box1 box2 box3 ." ". box1 box2 box3 .";
   grid-column-gap: 30px;
   grid-row-gap: 30px;
-  background-image: url("/assets/backgrounda.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  background-color: white;
   font-family: 'Noto Sans', sans-serif;
 }
 
-.app-grid .instrucciones {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 3;
-  grid-area: i;
-  background-color: rgba(173, 216, 230, 0.5);
-  padding: 15px;
-  border-radius: 10px;
-}
-
-.app-grid .instrucciones hr {
-  margin-bottom: 10px;
-}
-
-.app-grid .instrucciones .titulo {
+.app-grid .titulo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -108,9 +81,10 @@ header ul li a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: black;
 }
 
-.app-grid .instrucciones .titulo img {
+.app-grid .titulo img {
   width: 50px;
   height: 50px;
   margin-right: 20px;
@@ -131,7 +105,7 @@ header ul li a:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: #565688;
+  background-color: #e6e6ee;
   color: white;
 }
 
@@ -163,12 +137,21 @@ header ul li a:hover {
   font-size: 15px;
 }
 
-.app-grid .app-box .button {
-  font-size: 18px;
+.app-grid .app-box .boton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.app-grid .app-box .boton .button {
+  font-size: 14px;
   font-weight: 500;
   font-family: 'Montserrat', sans-serif;
   color: black;
-  border: none;
+  border: solid 1px gray;
   padding: 10px;
   border-radius: 20px;
   background-image: radial-gradient(circle 827px at 47.3% 48%, white 0%, #8ac0d8 90%);
@@ -178,6 +161,12 @@ header ul li a:hover {
   -webkit-transition-duration: .4s;
           transition-duration: .4s;
   text-decoration: none;
+  width: 200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -188,16 +177,17 @@ header ul li a:hover {
           align-items: center;
 }
 
-.app-grid .app-box .button img {
+.app-grid .app-box .boton .button img {
   width: 20px;
   height: 20px;
   margin-left: 10px;
 }
 
-.app-grid .app-box .button:hover {
+.app-grid .app-box .boton .button:hover {
   -webkit-box-shadow: 6px 6px 15px -3px rgba(0, 0, 0, 0.45);
   box-shadow: 6px 6px 15px -3px rgba(0, 0, 0, 0.45);
   color: #565688;
+  border: none;
 }
 
 .app-grid .app-box1 {
