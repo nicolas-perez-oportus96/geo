@@ -72,7 +72,7 @@ export default function MapComponent({ data }) {
         buffer: 128, // 64 default 64tile buffer on each side
         rendererFactory: L.svg.tile ,
         type: "protobuf",
-        url: "http://35.232.21.212/teselas/ING_VT/{z}/{x}/{y}.pbf",
+        url: "http://34.122.24.154/teselas/ING_VT/{z}/{x}/{y}.pbf",
         vectorTileLayerStyles: vectorStyles,
         subdomains: "abcd",
         key: "abcdefghi01234567890",

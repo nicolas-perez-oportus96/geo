@@ -60,46 +60,6 @@
             font-family: 'Noto Sans', sans-serif;
             font-size: 15px;
         }
-
-        .boton{
-            display: flex;
-            justify-content: flex-end;
-            .button {
-                font-size: 14px;
-                font-weight: 500;
-                font-family:'Montserrat', sans-serif;
-                color: black;
-                border: solid 1px gray;
-                padding: 10px;
-                border-radius: 20px;
-                background-image: radial-gradient( circle 827px at 47.3% 48%,  rgba(255,255,255,1) 0%, rgba(138,192,216,1) 90% );
-                cursor: pointer;
-                transition-property: all;
-                transition-duration: .4s;
-                text-decoration: none;
-                width: 200px;
-                padding-left: 20px;
-                padding-right: 20px;
-                justify-content: flex-end;
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-    
-                img {
-                    width: 20px;
-                    height:20px;
-                    margin-left: 10px;
-                }
-    
-                &:hover {
-                    -webkit-box-shadow: 6px 6px 15px -3px rgba(0,0,0,0.45);
-                    -moz-box-shadow: 6px 6px 15px -3px rgba(0,0,0,0.45);
-                    box-shadow: 6px 6px 15px -3px rgba(0,0,0,0.45);
-                    color: rgb(86, 86, 136);
-                    border: none;
-                }
-        }
-        }
     }
     
     .app-box1{

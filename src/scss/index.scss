@@ -4,6 +4,8 @@
 @import url('https://unpkg.com/leaflet@1.6.0/dist/leaflet.css');
 
 //Importando estilos modulares
+@import './layout/Buttons';
+@import './layout/Modal';
 @import './layout/Header';
 @import './layout/AppSelect';
 @import './layout/AppContainer';

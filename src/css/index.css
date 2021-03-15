@@ -1,6 +1,117 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap");
 @import url("https://unpkg.com/leaflet@1.6.0/dist/leaflet.css");
+.boton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.button {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  border: solid 1px gray;
+  padding: 10px;
+  border-radius: 20px;
+  background-image: radial-gradient(circle 827px at 47.3% 48%, white 0%, #8ac0d8 90%);
+  cursor: pointer;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: .4s;
+          transition-duration: .4s;
+  text-decoration: none;
+  width: 200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.button img {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+.button:hover {
+  -webkit-box-shadow: 6px 6px 15px -3px rgba(0, 0, 0, 0.45);
+  box-shadow: 6px 6px 15px -3px rgba(0, 0, 0, 0.45);
+  color: #565688;
+  border: none;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 50px;
+  z-index: 1000;
+  border-radius: 10px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.botones {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.titulo {
+  font-size: 20px;
+  font-family: 'Noto Sans', sans-serif;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  font-weight: 600;
+  font-family: 'Noto Sans', sans-serif;
+  padding-bottom: 20px;
+}
+
+.objetivo {
+  margin-bottom: 20px;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.descripcion {
+  margin-bottom: 20px;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.back img {
+  -webkit-transform: rotate(0.5turn);
+          transform: rotate(0.5turn);
+}
+
 header {
   background: url("/assets/navbar.png") top center no-repeat;
   background-size: cover;
@@ -135,59 +246,6 @@ header ul li a:hover {
 .app-grid .app-box p {
   font-family: 'Noto Sans', sans-serif;
   font-size: 15px;
-}
-
-.app-grid .app-box .boton {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-.app-grid .app-box .boton .button {
-  font-size: 14px;
-  font-weight: 500;
-  font-family: 'Montserrat', sans-serif;
-  color: black;
-  border: solid 1px gray;
-  padding: 10px;
-  border-radius: 20px;
-  background-image: radial-gradient(circle 827px at 47.3% 48%, white 0%, #8ac0d8 90%);
-  cursor: pointer;
-  -webkit-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: .4s;
-          transition-duration: .4s;
-  text-decoration: none;
-  width: 200px;
-  padding-left: 20px;
-  padding-right: 20px;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.app-grid .app-box .boton .button img {
-  width: 20px;
-  height: 20px;
-  margin-left: 10px;
-}
-
-.app-grid .app-box .boton .button:hover {
-  -webkit-box-shadow: 6px 6px 15px -3px rgba(0, 0, 0, 0.45);
-  box-shadow: 6px 6px 15px -3px rgba(0, 0, 0, 0.45);
-  color: #565688;
-  border: none;
 }
 
 .app-grid .app-box1 {
