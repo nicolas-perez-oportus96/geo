@@ -38,3 +38,27 @@
         border: none;
     }
 }
+
+.btn-reporte{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-color: #4F4F8F;
+    border-radius: 5px;
+    color: #4F4F8F;
+    background-color: white;
+    width: 120px;
+
+        i {
+            font-size: 30px;
+            margin-right: 5px;
+        }
+    }
+
+    .btn-reporte:hover{
+        color: white;
+        background-color: #4F4F8F;
+        border-color: white;
+        cursor: pointer;
+    }
+

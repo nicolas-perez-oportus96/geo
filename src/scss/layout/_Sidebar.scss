@@ -12,35 +12,35 @@
         }
     }
 
-    .reporte {
+    .descargas {
         display: flex;
-        justify-content:center;
+        justify-content:space-evenly;
         margin-bottom: 15px;
-        .btn-reporte{
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            border-color: #4F4F8F;
-            border-radius: 5px;
-            color: #4F4F8F;
-            background-color: white;
-
-            i {
-                font-size: 40px;
-                margin-right: 10px;
-            }
-        }
-
-        .btn-reporte:hover{
-            color: white;
-            background-color: #4F4F8F;
-            border-color: white;
-        }
     }
 
 
     .guia{
         padding: 10px;
         text-align: center;
+    }
+}
+
+.lista {
+    li{
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+
+    span {
+        margin-left: 5px;
+    }
+    i{
+        font-size: 15px;
+        margin-right: 5px;
+    }
+
+    i:hover{
+        color: rgb(86, 86, 136);
     }
 }

@@ -3,7 +3,6 @@ import React, { useContext } from 'react';
 import { Map, TileLayer, LayersControl, LayerGroup, withLeaflet} from 'react-leaflet';
 import { BingLayer } from 'react-leaflet-bing-v2';
 import L, { CRS } from 'leaflet';
-// import MapLayer from './MapLayer';
 import { FeatureContext } from './FeatureContext';
 import VectorGridDefault from "react-leaflet-vectorgrid";
 const bing_key = "ArSPuxaxB8bp-VtsbY3jIUaocR9WLqKRM5X1rhjQLHHwolRjr5oAoUZ436gUVrvM";
@@ -66,7 +65,7 @@ export default function MapComponent({ data }) {
         }
     };
      //opciones VectorGrid
-     const options = {
+    const options = {
         tolerance: 30, // 5 simplification tolerance (higher means simpler)
         extent: 4096, //4096, // 4096 tile extent (both width and height)
         buffer: 128, // 64 default 64tile buffer on each side
@@ -81,7 +80,6 @@ export default function MapComponent({ data }) {
     };
 
     const VectorGrid = withLeaflet(VectorGridDefault);
-   
     //JSX
     return (
         <Map center={[-34.238347, -70.250921]} zoom={8} minZoom={8} maxZoom={12} maxBounds={[[-35.494268, -70.735148], [-32.963408, -69.766694]]} crs={CRS.EPSG3857} >
@@ -117,11 +115,11 @@ export default function MapComponent({ data }) {
                 </LayersControl.BaseLayer>
 
                 <LayersControl.Overlay checked name="Area de Estudio">
-                    <TileLayer url="http://35.232.21.212/teselas/CBase/{z}/{x}/{y}.png" tms={false} />
+                    <TileLayer url="http://34.122.24.154/teselas/CBase/{z}/{x}/{y}.png" tms={false} />
                 </LayersControl.Overlay>
 
                 <LayersControl.Overlay name="Etiquetas">
-                    <TileLayer url="http://35.232.21.212/teselas/Label/{z}/{x}/{y}.png" tms={false} />
+                    <TileLayer url="http://34.122.24.154/teselas/Label/{z}/{x}/{y}.png" tms={false} />
                 </LayersControl.Overlay>
 
                 <VectorGrid {...options}  onClick={ (e) => {getFeatureData(e.layer.properties);}  } />
