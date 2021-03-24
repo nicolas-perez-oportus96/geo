@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { FeatureContext } from './FeatureContext';
+import { FeatureContext } from '../FeatureContext';
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion';
 import axios from 'axios'
 import Tippy from '@tippyjs/react';

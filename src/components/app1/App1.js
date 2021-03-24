@@ -1,28 +1,27 @@
-import React, { Component } from 'react'
-import MapComponent from './MapComponent';
+import React, { Component, } from 'react'
+import MapComponent from '../MapComponent';
+import Sidebar from './Sidebar'
+
 
 export default class App1 extends Component {
-  
-
+    
     render() {
         return (
             <main className="app-container">
                 <div className="instrucciones">
                     <div className="container flex">
-                        <img src="/assets/app.svg" alt="app-icon"/>
+                        <img src="/assets/app.svg" alt="app-icon" />
                         <div className="texto">
-                            <h1>Aplicacion 3: <span>Glaciar Nuevo</span></h1>
+                            <h1>Aplicacion 1: <span>Glaciar Hielo</span></h1>
                             <p>Haz clic sobre un polígono para seleccionarlo y ver sus metadatos.</p>
                         </div>
-                   </div>
+                    </div>
                 </div>
 
-                <div className="sidebar">
-                    <h2>Informacion del poligono</h2>
-                </div>
+                <Sidebar/>
 
                 <div className="map">
-                    <MapComponent/>
+                    <MapComponent />
                 </div>
             </main>
         )
