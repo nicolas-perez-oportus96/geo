@@ -6,7 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "@tippyjs/react": "^4.2.4",
+    "@tippyjs/react": "^4.2.5",
     "axios": "^0.21.1",
     "cors": "^2.8.5",
     "js-file-download": "^0.4.12",
@@ -14,10 +14,9 @@
     "leaflet.wms": "^0.2.0",
     "lodash": "^4.17.21",
     "react": "^16.14.0",
-    "react-accessible-accordion": "^3.3.4",
+    "react-accessible-accordion": "^3.3.5",
     "react-dom": "^16.14.0",
     "react-leaflet": "^2.8.0",
-    "react-leaflet-bing-v2": "^5.0.1",
     "react-leaflet-vectorgrid": "^2.2.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.4",
@@ -34,14 +33,16 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
+      ">0.3%",
+      "not ie 11",
       "not dead",
       "not op_mini all"
     ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+  "development": [
+      ">0.3%",
+      "not ie 11",
+      "not dead",
+      "not op_mini all"
     ]
   }
 }

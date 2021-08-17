@@ -1,11 +1,9 @@
 //imports
 import React, { useContext } from 'react';
 import { Map, TileLayer, LayersControl, LayerGroup, withLeaflet} from 'react-leaflet';
-import { BingLayer } from 'react-leaflet-bing-v2';
 import L, { CRS } from 'leaflet';
 import { FeatureContext } from './FeatureContext';
 import VectorGridDefault from "react-leaflet-vectorgrid";
-const bing_key = "ArSPuxaxB8bp-VtsbY3jIUaocR9WLqKRM5X1rhjQLHHwolRjr5oAoUZ436gUVrvM";
 
 //FUNCTIONAL COMPONENT
 export default function MapComponent({ data }) {
@@ -18,7 +16,7 @@ export default function MapComponent({ data }) {
 
     //estilos para los vectores  
     const vectorStyles = {
-        ING_Montaña: {
+        ING_Montana: {
             minZoom: 12, 
             stroke: true,
             color: 'black',
@@ -64,14 +62,15 @@ export default function MapComponent({ data }) {
             fillOpacity: 0.5,
         }
     };
-     //opciones VectorGrid
+
+    //opciones VectorGrid
     const options = {
         tolerance: 30, // 5 simplification tolerance (higher means simpler)
         extent: 4096, //4096, // 4096 tile extent (both width and height)
         buffer: 128, // 64 default 64tile buffer on each side
         rendererFactory: L.svg.tile ,
         type: "protobuf",
-        url: "http://34.122.24.154/teselas/ING_VT/{z}/{x}/{y}.pbf",
+        url: "http://34.121.165.39/teselas/ING_VT/{z}/{x}/{y}.pbf",
         vectorTileLayerStyles: vectorStyles,
         subdomains: "abcd",
         key: "abcdefghi01234567890",
@@ -109,17 +108,13 @@ export default function MapComponent({ data }) {
                     />
                 </LayersControl.BaseLayer>
 
-                {/* BING Maps Satellital */}
-                <LayersControl.BaseLayer name="BING Maps Satellital">
-                    <BingLayer bingkey={bing_key} />
-                </LayersControl.BaseLayer>
 
                 <LayersControl.Overlay checked name="Area de Estudio">
-                    <TileLayer url="http://34.122.24.154/teselas/CBase/{z}/{x}/{y}.png" tms={false} />
+                    <TileLayer url="http://34.121.165.39/teselas/CBase/{z}/{x}/{y}.png" tms={false} />
                 </LayersControl.Overlay>
 
                 <LayersControl.Overlay name="Etiquetas">
-                    <TileLayer url="http://34.122.24.154/teselas/Label/{z}/{x}/{y}.png" tms={false} />
+                    <TileLayer url="http://34.121.165.39/teselas/Label/{z}/{x}/{y}.png" tms={false} />
                 </LayersControl.Overlay>
 
                 <VectorGrid {...options}  onClick={ (e) => {getFeatureData(e.layer.properties);}  } />

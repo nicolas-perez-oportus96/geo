@@ -15,7 +15,7 @@ export default function Sidebar() {
         const FileDownload = require('js-file-download');
 
         axios({
-            url: 'http://34.122.24.154/pdf/_'+ id + '-.pdf',
+            url: 'http://34.121.165.39/pdf/_'+ id + '-.pdf',
             method: 'GET',
             responseType: 'blob', // Important
         }).then((response) => {
@@ -28,7 +28,7 @@ export default function Sidebar() {
         const FileDownload = require('js-file-download');
 
         axios({
-            url: 'http://34.122.24.154/zip/'+ id + '.zip',
+            url: 'http://34.121.165.39/zip/'+ id + '.zip',
             method: 'GET',
             responseType: 'blob', // Important
         }).then((response) => {
