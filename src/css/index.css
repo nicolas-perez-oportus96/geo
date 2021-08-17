@@ -67,6 +67,7 @@
   color: #4F4F8F;
   background-color: white;
   width: 120px;
+  height: 50px;
 }
 
 .btn-reporte i {
@@ -79,6 +80,28 @@
   background-color: #4F4F8F;
   border-color: white;
   cursor: pointer;
+}
+
+.ela-select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  margin-bottom: 1rem;
+}
+
+.ela-select select {
+  display: block;
+  height: 2rem;
+  width: 16.5rem;
+  border: solid 2px #4F4F8F;
+  border-radius: 5px;
+  color: #4F4F8F;
 }
 
 .modal {
@@ -362,7 +385,6 @@ header ul li a:hover {
 .app-container .sidebar h2 {
   font-size: 18px;
   font-weight: 300;
-  padding: 15px 0 0 20px;
   color: #535353;
 }
 

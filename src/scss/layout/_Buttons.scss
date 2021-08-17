@@ -48,6 +48,7 @@
     color: #4F4F8F;
     background-color: white;
     width: 120px;
+    height: 50px;
 
         i {
             font-size: 30px;
@@ -62,3 +63,19 @@
         cursor: pointer;
     }
 
+
+    .ela-select{
+        display: flex;
+        justify-content: center;
+        height: min-content;
+        margin-bottom: 1rem;
+
+        select{
+            display: block;
+            height: 2rem;
+            width: 16.5rem;
+            border: solid 2px #4F4F8F;
+            border-radius: 5px;
+            color: #4F4F8F;
+        }
+    }

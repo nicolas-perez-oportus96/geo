@@ -9,7 +9,8 @@ import 'react-accessible-accordion/dist/fancy-example.css';
 
 export default function Sidebar() {
 
-    const [feature] = useContext(FeatureContext);
+    const { feature } = useContext(FeatureContext);
+    const [featureValue] = feature;
 
     // FUNCION PARA DESCARGAR REPORTE PDF
     async function getReporte(id) {
@@ -39,7 +40,9 @@ export default function Sidebar() {
         console.log("click")
     }
 
-    if (Object.entries(feature).length !== 0){
+
+    // RENDERIZADO DEL SIDEBAR
+    if (Object.entries(featureValue).length !== 0){
         return (
             <div className="sidebar">
 
@@ -48,8 +51,8 @@ export default function Sidebar() {
                 </div>
 
                 <div className="descargas">
-                    <button className="btn-reporte" onClick={ (e) => getReporte(feature.COD_GLA) }><i class="far fa-file-pdf"></i>Descargar Reporte</button>
-                    <button className="btn-reporte" onClick={ (e) => getShape(feature.COD_GLA) }><i class="far fa-file-archive"></i>Descargar ShapeFile</button>
+                    <button className="btn-reporte" onClick={ (e) => getReporte(featureValue.COD_GLA) }><i class="far fa-file-pdf"></i>Descargar Reporte</button>
+                    <button className="btn-reporte" onClick={ (e) => getShape(featureValue.COD_GLA) }><i class="far fa-file-archive"></i>Descargar ShapeFile</button>
                 </div>
 
                 <Accordion allowZeroExpanded={true} preExpanded={['info']}>
@@ -69,7 +72,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     NOMBRE:
-                                    <span>{feature.NOMBRE}</span>
+                                    <span>{featureValue.NOMBRE}</span>
                                 </li>
 
                                 <li>
@@ -77,7 +80,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     CÓDIGO WGI: 
-                                    <span>{feature.COD_GLA}</span>
+                                    <span>{featureValue.COD_GLA}</span>
                                 </li>
 
                                 <li>
@@ -85,7 +88,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     CÓDIGO BNI: 
-                                    <span>{feature.COD_BNA}</span>
+                                    <span>{featureValue.COD_BNA}</span>
                                 </li>
 
                                 <li>
@@ -93,7 +96,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     CLASIFICACIÓN WGI: 
-                                    <span>{feature.CLAS_WGI}</span>
+                                    <span>{featureValue.CLAS_WGI}</span>
                                 </li>
 
                                 <li>
@@ -101,7 +104,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     CATEGORÍA DE CLASIFICACIÓN WGI: 
-                                    <span>{feature.CLASIFICA}</span>
+                                    <span>{featureValue.CLASIFICA}</span>
                                 </li>
 
                                 <li>
@@ -109,7 +112,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     ZONA GLACIOLÓGICA: 
-                                    <span>{feature.ZONA_GLACI}</span>
+                                    <span>{featureValue.ZONA_GLACI}</span>
                                 </li>
 
                                 <li>
@@ -117,7 +120,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     COORDENADA ESTE: 
-                                    <span>{feature.ESTE}</span>
+                                    <span>{featureValue.ESTE}</span>
                                 </li>
 
                                 <li>
@@ -125,7 +128,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     COORDENADA NORTE: 
-                                    <span>{feature.NORTE}</span>
+                                    <span>{featureValue.NORTE}</span>
                                 </li>
 
                                 <li>
@@ -133,7 +136,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     LATITUD: 
-                                    <span>{feature.LATITUD}</span>
+                                    <span>{featureValue.LATITUD}</span>
                                 </li>
 
                                 <li>
@@ -141,7 +144,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     LONGITUD: 
-                                    <span>{feature.LONGITUD}</span>
+                                    <span>{featureValue.LONGITUD}</span>
                                 </li>
                             </ul>
                         </AccordionItemPanel>
@@ -162,7 +165,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     CÓDIGO DE REGIÓN: 
-                                    <span>{feature.COD_REGION}</span>
+                                    <span>{featureValue.COD_REGION}</span>
                                 </li>
 
                                 <li>
@@ -170,7 +173,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     NOMBRE DE REGIÓN: 
-                                    <span>{feature.REGION}</span>
+                                    <span>{featureValue.REGION}</span>
                                 </li>
 
                                 <li>
@@ -178,7 +181,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     CÓDIGO DE PROVINCIA: 
-                                    <span>{feature.COD_PROVIN}</span>
+                                    <span>{featureValue.COD_PROVIN}</span>
                                 </li>
 
                                 <li>
@@ -186,7 +189,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     NOMBRE DE PROVINCIA: 
-                                    <span>{feature.PROVINCIA}</span>
+                                    <span>{featureValue.PROVINCIA}</span>
                                 </li>
 
                                 <li>
@@ -194,7 +197,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     CÓDIGO DE COMUNA: 
-                                    <span>{feature.COD_COM}</span>
+                                    <span>{featureValue.COD_COM}</span>
                                 </li>
 
                                 <li>
@@ -202,7 +205,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     NOMBRE DE COMUNA: 
-                                    <span>{feature.COMUNA}</span>
+                                    <span>{featureValue.COMUNA}</span>
                                 </li>
                             </ul>
                         </AccordionItemPanel>
@@ -223,14 +226,14 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     CÓDIGO DE CUENCA: 
-                                    <span>{feature.COD_CUEN}</span>
+                                    <span>{featureValue.COD_CUEN}</span>
                                 </li>
                                 <li>
                                     <Tippy content="Nombre de la cuenca hidrografrica en donde se situa el glaciar" trigger='click' animation='shift-away'>
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     NOMBRE DE CUENCA: 
-                                    <span>{feature.NOMB_CUEN}</span>
+                                    <span>{featureValue.NOMB_CUEN}</span>
                                 </li>
                                 
                                 <li>
@@ -238,7 +241,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     CÓDIGO DE SUBCUENCA: 
-                                    <span>{feature.COD_SCUEN}</span>
+                                    <span>{featureValue.COD_SCUEN}</span>
                                 </li>
 
                                 <li>
@@ -246,7 +249,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     NOMBRE DE SUBCUENCA: 
-                                    <span>{feature.NOMB_SCUEN}</span>
+                                    <span>{featureValue.NOMB_SCUEN}</span>
                                 </li>
 
                                 <li>
@@ -254,7 +257,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     CÓDIGO DE SUBSUBCUENCA: 
-                                    <span>{feature.COD_SSCUEN}</span>
+                                    <span>{featureValue.COD_SSCUEN}</span>
                                 </li>
 
                                 <li>
@@ -262,7 +265,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     NOMBRE DE SUBSUBCUENCA: 
-                                    <span>{feature.NOMB_SSCUE}</span>
+                                    <span>{featureValue.NOMB_SSCUE}</span>
                                 </li>
                             </ul>
                         </AccordionItemPanel>
@@ -283,7 +286,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     CUENCAS DE DRENAJE: 
-                                    <span>{feature.N_CUENDRE}</span>
+                                    <span>{featureValue.N_CUENDRE}</span>
                                 </li>
 
                                 <li>
@@ -291,7 +294,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     ÁREA TOTAL (Km²): 
-                                    <span>{feature.AREA_KM2}</span>
+                                    <span>{featureValue.AREA_KM2}</span>
                                 </li>
 
                                 <li>
@@ -299,7 +302,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     ÁREA CUBIERTA (Km²): 
-                                    <span>{feature.AREA_CUB2}</span>
+                                    <span>{featureValue.AREA_CUB2}</span>
                                 </li>
 
                                 <li>
@@ -307,7 +310,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     PERÍMETRO (Km): 
-                                    <span>{feature.PERIMET}</span>
+                                    <span>{featureValue.PERIMET}</span>
                                 </li>
 
                                 <li>
@@ -315,7 +318,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     VOLUMEN (m³): 
-                                    <span>{feature.VOLU_M3}</span>
+                                    <span>{featureValue.VOLU_M3}</span>
                                 </li>
 
                                 <li>
@@ -323,7 +326,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     LARGO MÁXIMO (Km): 
-                                    <span>{feature.LMAXTOTAL}</span>
+                                    <span>{featureValue.LMAXTOTAL}</span>
                                 </li>
 
                                 <li>
@@ -331,7 +334,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     LARGO PROMEDIO (Km): 
-                                    <span>{feature.LARGO_PROM}</span>
+                                    <span>{featureValue.LARGO_PROM}</span>
                                 </li>
 
                                 <li>
@@ -339,7 +342,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     ANCHO PROMEDIO (Km): 
-                                    <span>{feature.ANCHO_PROM}</span>
+                                    <span>{featureValue.ANCHO_PROM}</span>
                                 </li>
 
                                 <li>
@@ -347,7 +350,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     ESPESOR MEDIO (m): 
-                                    <span>{feature.ESP_MED}</span>
+                                    <span>{featureValue.ESP_MED}</span>
                                 </li>
 
                                 <li>
@@ -355,7 +358,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     ALTITUD MÁXIMA (msnm): 
-                                    <span>{feature.HMAX}</span>
+                                    <span>{featureValue.HMAX}</span>
                                 </li>
 
                                 <li>
@@ -363,7 +366,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     ALTITUD MEDIA (msnm): 
-                                    <span>{feature.HMEDIA}</span>
+                                    <span>{featureValue.HMEDIA}</span>
                                 </li>
 
                                 <li>
@@ -371,7 +374,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     ALTITUD MÍNIMA TOTAL (msnm): 
-                                    <span>{feature.HMINTOTAL}</span>
+                                    <span>{featureValue.HMINTOTAL}</span>
                                 </li>
 
                                 <li>
@@ -379,7 +382,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     MEDIANA DE LA ALTITUD (msnm): 
-                                    <span>{feature.HMEDIANA}</span>
+                                    <span>{featureValue.HMEDIANA}</span>
                                 </li>
 
                                 <li>
@@ -387,7 +390,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     ORIENTACIÓN: 
-                                    <span>{feature.ORIENTA}</span>
+                                    <span>{featureValue.ORIENTA}</span>
                                 </li>
 
                                 <li>
@@ -395,7 +398,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     PENDIENTE (grados): 
-                                    <span>{feature.PENDIENTE}</span>
+                                    <span>{featureValue.PENDIENTE}</span>
                                 </li>
 
 
@@ -419,7 +422,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     ÁREA ACUMULACIÓN (Km²): 
-                                    <span>{feature.AREA_ACUM}</span>
+                                    <span>{featureValue.AREA_ACUM}</span>
                                 </li>
 
                                 <li>
@@ -427,7 +430,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     LARGO MÁXIMO ACUMULADO (Km): 
-                                    <span>{feature.L_MAX_ACUM}</span>
+                                    <span>{featureValue.L_MAX_ACUM}</span>
                                 </li>
 
                                 <li>
@@ -435,7 +438,7 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     ORIENTACIÓN DE ACUMULACIÓN: 
-                                    <span>{feature.ORIENACUM}</span>
+                                    <span>{featureValue.ORIENACUM}</span>
                                 </li>
                             </ul>
                         </AccordionItemPanel>
@@ -456,28 +459,28 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     ÁREA ABLACIÓN (Km²): 
-                                    <span>{feature.AREA_ABLAC}</span>
+                                    <span>{featureValue.AREA_ABLAC}</span>
                                 </li>
                                 <li>
                                     <Tippy content="Largo máximo de ablación (Km)" trigger='click' animation='shift-away'>
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     LARGO MÁXIMO ABLACIÓN (Km): 
-                                    <span>{feature.LMAXABLAC}</span>
+                                    <span>{featureValue.LMAXABLAC}</span>
                                 </li>
                                 <li>
                                     <Tippy content="Altitud media del área de ablación (msnm)" trigger='click' animation='shift-away'>
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     ALTITUD MEDIA ABLACIÓN (msnm): 
-                                    <span>{feature.HMEDABLAC}</span>
+                                    <span>{featureValue.HMEDABLAC}</span>
                                 </li>
                                 <li>
                                     <Tippy content="Orientación del área de ablación" trigger='click' animation='shift-away'>
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     ORIENTACIÓN DE ABLACIÓN (msnm): 
-                                    <span>{feature.ORIENABLAC}</span>
+                                    <span>{featureValue.ORIENABLAC}</span>
                                 </li>
                             </ul>
                         </AccordionItemPanel>
@@ -498,21 +501,21 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     ÁREA EXPUESTA (Km²): 
-                                    <span>{feature.AREA_EXP}</span>
+                                    <span>{featureValue.AREA_EXP}</span>
                                 </li>
                                 <li>
                                     <Tippy content="Largo máximo expuesto del glaciar (Km)" trigger='click' animation='shift-away'>
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     LARGO MÁXIMO EXPUESTO (Km): 
-                                    <span>{feature.L_MAX_EXP}</span>
+                                    <span>{featureValue.L_MAX_EXP}</span>
                                 </li>
                                 <li>
                                     <Tippy content="Altitud mínima del área expuesta (msnm)" trigger='click' animation='shift-away'>
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     ALTITUD MÍNIMA EXPUESTA (msnm): 
-                                    <span>{feature.HMINEXP}</span>
+                                    <span>{featureValue.HMINEXP}</span>
                                 </li>
                             </ul>
                         </AccordionItemPanel>
@@ -533,56 +536,56 @@ export default function Sidebar() {
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     FECHA DEL INVENTARIO: 
-                                    <span>{feature.INVENT_FEC}</span>
+                                    <span>{featureValue.INVENT_FEC}</span>
                                 </li>
                                 <li>
                                     <Tippy content="Fuente digitalización" trigger='click' animation='shift-away'>
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     FUENTE DE DIGITALIZACIÓN: 
-                                    <span>{feature.FUENTE_DIG}</span>
+                                    <span>{featureValue.FUENTE_DIG}</span>
                                 </li>
                                 <li>
                                     <Tippy content="Fecha de la fuente utilizada para la digitalización (dd/mm/aaaa)" trigger='click' animation='shift-away'>
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     FECHA DE LA FUENTE: 
-                                    <span>{feature.FUENTE_FEC}</span>
+                                    <span>{featureValue.FUENTE_FEC}</span>
                                 </li>
                                 <li>
                                     <Tippy content="Sistema de referencia" trigger='click' animation='shift-away'>
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     DATUM: 
-                                    <span>{feature.DATUM}</span>
+                                    <span>{featureValue.DATUM}</span>
                                 </li>
                                 <li>
                                     <Tippy content="Zona cartográfica en la que se sitúa el glaciar" trigger='click' animation='shift-away'>
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     HUSO: 
-                                    <span>{feature.HUSO}</span>
+                                    <span>{featureValue.HUSO}</span>
                                 </li>
                                 <li>
                                     <Tippy content="Resolución espacial de la base de imágenes utilizada (m²)" trigger='click' animation='shift-away'>
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     PRECISIÓN DE MEDIDA (m²): 
-                                    <span>{feature.PRECM}</span>
+                                    <span>{featureValue.PRECM}</span>
                                 </li>
                                 <li>
                                     <Tippy content="Error Absoluto" trigger='click' animation='shift-away'>
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     ERROR ABSOLUTO (km²): 
-                                    <span>{feature.ERROR_KM2}</span>
+                                    <span>{featureValue.ERROR_KM2}</span>
                                 </li>
                                 <li>
                                     <Tippy content="Error Absoluto" trigger='click' animation='shift-away'>
                                         <i class="far fa-question-circle"></i>
                                     </Tippy>
                                     ERROR PROPORCIONAL: 
-                                    <span>{feature.ERROR_PORC}</span>
+                                    <span>{featureValue.ERROR_PORC}</span>
                                 </li>
                             </ul>
                         </AccordionItemPanel>
@@ -595,7 +598,7 @@ export default function Sidebar() {
         return (
             <div className="sidebar">
                 <div className="titulo">
-                    <h1>Instrucciones</h1>
+                    <h2>Instrucciones</h2>
                 </div>
                 <div className="guia">
                     <p>Haz clic sobre un poligono para seleccionarlo y ver sus datos </p>

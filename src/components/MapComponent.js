@@ -7,11 +7,14 @@ import VectorGridDefault from "react-leaflet-vectorgrid";
 
 //FUNCTIONAL COMPONENT
 export default function MapComponent({ data }) {
-    const [feature, setFeature] = useContext(FeatureContext);
+    const { feature, elaMethod } = useContext(FeatureContext);
+    const [featureValue, setFeatureValue] = feature;
+    const [ elaMethodValue, setElaMethodValue] = elaMethod;
 
     //funcion para añadir datos del poligono seleccionado al context.
     function getFeatureData(featureData) {
-        setFeature(featureData);
+        setElaMethodValue('0');
+        setFeatureValue(featureData);
     }
 
     //estilos para los vectores  
