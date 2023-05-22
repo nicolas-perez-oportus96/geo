@@ -12,7 +12,7 @@ export default class App1 extends Component {
                     <div className="container flex">
                         <img src="/assets/app.svg" alt="app-icon" />
                         <div className="texto">
-                            <h1>Aplicacion 1: <span>Glaciar Hielo</span></h1>
+                            <h1>Aplicación 1: <span>Glaciar Hielo</span></h1>
                             <p>Haz clic sobre un polígono para seleccionarlo y ver sus metadatos.</p>
                         </div>
                     </div>
